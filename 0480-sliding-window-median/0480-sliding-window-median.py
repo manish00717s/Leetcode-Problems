@@ -1,0 +1,27 @@
+from sortedcontainers import SortedList
+
+class Solution:
+    def medianSlidingWindow(self, nums, k):
+
+        window = SortedList(nums[:k])
+
+        res = []
+
+        for i in range(k, len(nums) + 1):
+
+            # median
+            if k % 2:
+                res.append(window[k // 2])
+            else:
+                res.append(
+                    (window[k//2] + window[k//2 - 1]) / 2
+                )
+
+            if i == len(nums):
+                break
+
+            # slide window
+            window.remove(nums[i - k])
+            window.add(nums[i])
+
+        return res
