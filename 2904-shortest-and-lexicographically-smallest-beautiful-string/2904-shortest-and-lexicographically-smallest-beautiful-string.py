@@ -2,7 +2,6 @@ class Solution:
     def shortestBeautifulSubstring(self, s, k):
         n = len(s)
         ans = ""
-
         for i in range(n):
             ones = 0
             for j in range(i, n):
@@ -13,5 +12,4 @@ class Solution:
                     if ans == "" or len(sub) < len(ans) or (len(sub) == len(ans) and sub < ans):
                         ans = sub
                     break
-
         return ans

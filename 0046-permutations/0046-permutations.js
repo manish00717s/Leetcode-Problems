@@ -1,16 +1,10 @@
-/**
- * @param {number[]} nums
- * @return {number[][]}
- */
 var permute = function(nums) {
     let res = [];
-
     const backtrack = (path, used) => {
         if (path.length === nums.length) {
             res.push([...path]);
             return;
         }
-
         for (let i = 0; i < nums.length; i++) {
             if (used[i]) continue;
             used[i] = true;
@@ -20,7 +14,6 @@ var permute = function(nums) {
             used[i] = false;
         }
     };
-
     backtrack([], []);
     return res;
 };

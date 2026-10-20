@@ -1,7 +1,3 @@
-/**
- * @param {string} s
- * @return {boolean}
- */
 var isValid = s => {
     let st = [], m = {')':'(',']':'[','}':'{'};
     for (let c of s) {

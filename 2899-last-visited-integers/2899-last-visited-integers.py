@@ -3,7 +3,6 @@ class Solution:
         nums = []
         res = []
         k = 0
-        
         for w in words:
             if w == -1:
                 k += 1
@@ -11,5 +10,4 @@ class Solution:
             else:
                 nums.append(w)
                 k = 0
-                
         return res
